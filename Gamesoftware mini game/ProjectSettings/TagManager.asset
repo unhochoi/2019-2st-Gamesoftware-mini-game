@@ -4,7 +4,12 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - Enemy
+  - Projectiles
+  - end
   - Mushroom
+  - start
+  - falldown
   layers:
   - Default
   - TransparentFX
@@ -14,17 +19,17 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Background
+  - PlayerOnly
+  - Enemies
+  - EnemiesOnly
+  - PlayerWeapon
+  - Pickups
+  - Environment
+  - PlayerProjectiles
+  - EnemyProjectiles
+  - player
+  - door
   - 
   - 
   - 
@@ -41,4 +46,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 2257613067
+    locked: 0
+  - name: player
+    uniqueID: 3122849593
+    locked: 0
+  - name: door
+    uniqueID: 1601037073
     locked: 0
