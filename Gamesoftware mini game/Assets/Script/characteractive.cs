@@ -106,18 +106,23 @@ void OnTriggerEnter2D(Collider2D other)
             }
 
             if(health <=0){     //생명력이 다 떨어지면 게임종료
-                Game_Manager.EndGame();
+                other.enabled = false;
+                Game_Manager.EndGame(health);
             }
         }
         //종료포탈에 닿으면
         if (other.gameObject.tag == "end" )
         {
-            Game_Manager.EndGame();
+            other.enabled = false;
+            Game_Manager.EndGame(health);
+            
         }
         //아래로 떨어지면
         if (other.gameObject.tag == "falldown" )
         {
-            Game_Manager.EndGame();
+            other.enabled = false;
+            health = 0;
+            Game_Manager.EndGame(health);
         }
         
     }

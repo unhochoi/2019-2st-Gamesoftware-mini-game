@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 15
-  productGUID: 00000000000000000000000000000000
+  productGUID: 7e9b43591ff399d41b2543e6fa5b060b
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -632,7 +632,7 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   cloudProjectId: 0efc6dfb-1625-461a-a41e-49d69b1a22eb
   framebufferDepthMemorylessMode: 0
-  projectName: Bolt Platformer Kit
+  projectName: Gamesoftware mini game
   organizationId: choiunho
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0

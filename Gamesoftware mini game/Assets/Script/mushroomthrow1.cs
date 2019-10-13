@@ -17,7 +17,7 @@ public class mushroomthrow1 : MonoBehaviour
     void Update()
     {
         if (transform.position.x > 18.55f){
-            transform.position = new Vector3(-14.9f,5.18f,-9.880508f);
+            transform.position = new Vector3(-15.16f,5f,-9.880508f);
 
         }else{
             transform.Translate(Vector3.right * speed * Time.deltaTime);
@@ -28,7 +28,7 @@ public class mushroomthrow1 : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
           if(other.tag.Equals("Player")){ //부딪힌 객체가 적인지 검사합니다.
-                transform.position = new Vector3(-14.9f,5.18f,-9.880508f);
+            transform.position = new Vector3(-15.16f,5f,-9.880508f);
           }
     }
 }

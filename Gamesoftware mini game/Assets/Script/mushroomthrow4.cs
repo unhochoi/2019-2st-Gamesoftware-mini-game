@@ -16,7 +16,7 @@ public class mushroomthrow4 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.x < -18.55f){
+        if (transform.position.x < -10.55f){
             transform.position = new Vector3(-0.68f,14.12f,-9.880508f);
 
         }else{

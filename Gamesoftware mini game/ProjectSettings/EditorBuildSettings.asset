@@ -14,4 +14,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/assets/BoltKit_PointClick/Scenes/Level02.unity
     guid: 1970997d4d86d4848a1c6bee7a85b323
+  - enabled: 1
+    path: Assets/Scenes/SampleScene.unity
+    guid: 895b29fd0ce4deb47a8cf91d8f9a2930
+  - enabled: 1
+    path: Assets/Scenes/SampleScene1.unity
+    guid: 5eb90766727549f418ac185cb7a8ecfe
+  - enabled: 1
+    path: Assets/Scenes/SampleScene2.unity
+    guid: 273845074e9c8574c82e8c16203149bf
   m_configObjects: {}
