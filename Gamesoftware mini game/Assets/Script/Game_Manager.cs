@@ -4,13 +4,10 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class Game_Manager : MonoBehaviour
 {
-
-    //public GameObject player;
-
-    Vector3 StartingPos;
-    Quaternion StartingRotate;
-    bool isStarted = false;
-    static bool isEnded = false;
+    Vector3 StartingPos;            //시작위치
+    Quaternion StartingRotate;      //시작로테이트
+    bool isStarted = false;         //시작지점인지!
+    static bool isEnded = false;    //종료지점인지!
 
     //Scene index 를 저장할 변수
     static int stageLevel = 3;
@@ -19,10 +16,6 @@ public class Game_Manager : MonoBehaviour
         Time.timeScale = 0f;        //게임을 정지 시킨다.
     }
     
- 
-    
-    // Start is called before the first frame update
-
     void Start()
     {
         StartingPos = GameObject.FindGameObjectWithTag("start").transform.position;
@@ -34,13 +27,10 @@ public class Game_Manager : MonoBehaviour
     }
 
     void OnGUI(){
-
-
             GUILayout.BeginArea(new Rect(0,0,Screen.width,Screen.height));      //시작
 
             GUILayout.BeginHorizontal();        //수평정렬
             GUILayout.FlexibleSpace();
-
             GUILayout.BeginVertical();        //수직정렬
             GUILayout.FlexibleSpace();
 
@@ -54,8 +44,6 @@ public class Game_Manager : MonoBehaviour
 
             GUILayout.Space(5);
             GUILayout.EndVertical();        
-            
-
             GUILayout.FlexibleSpace();
             GUILayout.EndHorizontal();
 
@@ -69,7 +57,6 @@ public class Game_Manager : MonoBehaviour
 
             GUILayout.BeginHorizontal();        //수평정렬
             GUILayout.FlexibleSpace();
-
             GUILayout.BeginVertical();        //수직정렬
             GUILayout.FlexibleSpace();
 
@@ -80,13 +67,8 @@ public class Game_Manager : MonoBehaviour
                 StartGame();
             
             }
-
-    
-            
             GUILayout.FlexibleSpace();
-            GUILayout.EndVertical();        
-            
-
+            GUILayout.EndVertical();       
             GUILayout.FlexibleSpace();
             GUILayout.EndHorizontal();
 
@@ -122,29 +104,20 @@ public class Game_Manager : MonoBehaviour
 
         //생명력이 다 달아서 endgame된거면 시작 씬으로 돌아간다.
         if (health <= 0){
-            //stageLevel = 3;
-            //SceneManager.LoadScene(stageLevel, LoadSceneMode.Single);
             isEnded = true;
         }
         // 마지막 씬에서 포탈에 닿은거면 게임종료!
         else if (stageLevel == 6){
-            //stageLevel = 3;
-            //SceneManager.LoadScene(stageLevel, LoadSceneMode.Single);
             isEnded = true;
         }
         // 그냥 종료포탈에 닿은거면!
         else{
-            //다음 스테이지로 넘어간다!
-            SceneManager.LoadScene(stageLevel, LoadSceneMode.Single);
+            SceneManager.LoadScene(stageLevel, LoadSceneMode.Single);   //다음 스테이지로 넘어간다!
         }
     }
     void StartGame(){       //게임시작하면!
         Time.timeScale = 1f;    //게임진행
 
     }
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }

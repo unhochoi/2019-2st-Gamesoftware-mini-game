@@ -10,15 +10,14 @@ public class characteractive : MonoBehaviour
     public int maxHealth = 3;       //최대 생명력
 
 
-    Rigidbody2D rigid;
-    Animator animator;
+    Rigidbody2D rigid;          //리지드 선언
 
-    SpriteRenderer spriteRenderer;
+    SpriteRenderer spriteRenderer;      //SpriteRenderer 선언
 
     Vector3 movement;      
     bool isDie = false;     //플레이어 사망
     bool isJumping = false;     //점프 상태
-    bool isUnBeatTime = false;
+    bool isUnBeatTime = false;  //무적 상태
     int health = 3;     //현재 생명력
     
     // Start is called before the first frame update
@@ -26,15 +25,14 @@ public class characteractive : MonoBehaviour
 
     void Start()
     {
-        rigid = gameObject.GetComponent<Rigidbody2D>();
+        rigid = gameObject.GetComponent<Rigidbody2D>();     //리지드 컴포넌트를 가져온다.
         health = maxHealth;     //게임 시작될 때마다 현재 체력을 최대 체력으로 셋팅
-        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();     //SpriteRenderer 컴포넌트를 가져온다.
     }
 
     // Update is called once per frame
     void Update()
     {
-        
         if (Input.GetKey(KeyCode.UpArrow)){     //점프키가 눌리면 
 
             if (rigid.velocity.y == 0 ){        //땅에 착지했을때만 점프 가능!
@@ -53,7 +51,7 @@ public class characteractive : MonoBehaviour
 
     void Die(){     //사망함수 
         isDie = true;
-        transform.position = new Vector3(0.0f, 1.7f, 0.0f);
+        transform.position = new Vector3(0.0f, 1.7f, 0.0f);     //캐릭터 위치를 초기화!
 
     }
 
@@ -117,7 +115,7 @@ void OnTriggerEnter2D(Collider2D other)
             Game_Manager.EndGame(health);
             
         }
-        //아래로 떨어지면
+        //맵 밖으로 떨어지면
         if (other.gameObject.tag == "falldown" )
         {
             other.enabled = false;
@@ -127,10 +125,13 @@ void OnTriggerEnter2D(Collider2D other)
         
     }
  
+//무적상태 표현
  IEnumerator UnBeatTime(){
 
      int countTime = 0;
+     //일정시간동안 캐릭터 깜빡임
      while (countTime < 3){
+
          if (countTime%2 == 0){
              spriteRenderer.color = new Color32(255,255,255,90);
          }else{
@@ -152,6 +153,7 @@ void OnTriggerEnter2D(Collider2D other)
      GUILayout.BeginHorizontal();
      GUILayout.Space(15);
 
+        //빨간색으로 하트 표현
      string heart = "";
      for (int i=0; i<health;i++){
          heart += "<color=#ff0000>" + "♥ " + "</color>";
@@ -165,8 +167,4 @@ void OnTriggerEnter2D(Collider2D other)
      GUILayout.EndVertical();
      GUILayout.EndArea();
  }
-    
-
-
-
 }
